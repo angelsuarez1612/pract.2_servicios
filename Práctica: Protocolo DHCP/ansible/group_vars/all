@@ -1,0 +1,29 @@
+#router
+router_address: 10.0.0.1
+router_netmask: 255.255.255.0
+direccion_red: 10.0.0.0/24
+interfaz_salida: ens8
+web_address: 10.0.0.2
+
+#web 
+interfaz_cliente: ens8
+
+#dhcp
+red_muy_aislada: ens9
+##reserva
+nombre_reserva: ReservaWeb
+mac_reserva: 52:54:00:61:6d:90
+fixed_address: 10.0.0.2
+
+range: 10.0.0.100 10.0.0.110
+subnet_dhcp: 10.0.0.0 
+netmask_dhcp: 255.255.255.0
+default_lease_time: 3600
+max_lease_time: 3600
+option_subnet_mask: 255.255.255.0
+option_broadcast_address: 10.0.0.255
+option_routers: 10.0.0.1
+option_domain_name_servers: 8.8.8.8
+
+#general
+interfaz: ens3

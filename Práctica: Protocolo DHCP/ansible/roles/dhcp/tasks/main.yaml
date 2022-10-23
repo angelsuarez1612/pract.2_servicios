@@ -1,0 +1,27 @@
+- name: "Instala los paquetes necesarios"
+  apt:
+    pkg:
+      - isc-dhcp-server
+      - iptables
+    
+- name: "Cambiar la plantilla de /etc/dhcp/dhcpd.conf"
+  template:
+    src: dhcpd.conf
+    dest: /etc/dhcp/dhcpd.conf
+    owner: root
+    group: root
+    mode: '0644'
+  notify:
+    - Reinicio servicio isc-dhcp-server
+
+- name: "Cambiar la plantilla de /etc/default/isc-dhcp-server"
+  template:
+    src: isc-dhcp-server
+    dest: /etc/default/isc-dhcp-server
+    owner: root
+    group: root
+    mode: '0644'
+  notify:
+    - Reinicio servicio isc-dhcp-server
+
+    

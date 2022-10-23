@@ -1,0 +1,3 @@
+- name: Reinicio Máquina
+  reboot:
+  become: yes
