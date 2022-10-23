@@ -11,15 +11,15 @@ iface lo inet loopback
 auto {{interfaz}}
 iface {{interfaz}} inet dhcp
 
-allow-hotplug ens8
-iface ens8 inet dhcp
+allow-hotplug ens9
+iface ens9 inet dhcp
     post-up iptables -t nat -A POSTROUTING -s {{direccion_red}} -o {{interfaz_salida}} -j MASQUERADE
 
     post-up iptables -t nat -A PREROUTING -p tcp --dport 80 -i {{interfaz_salida}} -j DNAT --to {{web_address}}
 
 
 # Red privada
-allow-hotplug ens9
-iface ens9 inet static
+allow-hotplug ens8
+iface ens8 inet static
         address {{router_address}}
         netmask {{router_netmask}}

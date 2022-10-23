@@ -3,4 +3,3 @@
     name: networking
     state: restarted
   ignore_errors: yes
-  timeout: 1
